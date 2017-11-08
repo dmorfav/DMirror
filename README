@@ -9,17 +9,15 @@ para la distribucion de Kali linux en su version kali-rolling.
 CONSIDERACIONES PREVIAS
 ------------------------
 
-* Se asume que ud posee instalado alguna distribucion de linux.
+* Se asume que posee instalado alguna distribucion de linux.
 
-* Se asume que posee una conexion a internet.
+* Se asume que consta con una conexion a internet.
 
-* Se asume que ud tiene un conocimiento basico para el manejo Terminal.
+* Se asume que tiene un conocimiento basico para el manejo de la Terminal.
 
-* Ud debera poseer acceso como root al equipo donde desea realizar la replica ya que sera necesaria
-  la instalacion de algunos paquetes extras.
+* Debe poseer acceso como root al equipo donde desea realizar la replica ya que sera necesaria la instalacion de algunos paquetes extras.
 
-* Sera necesario instalar un servidor web en el equipo donde se llevara a cabo la replica, en nuestro
-  caso sera Apache.
+* Sera necesario instalar un servidor web en el equipo donde se llevara a cabo la replica, en nuestro caso sera Apache.
 
 * Debera contar con suficiente espacio en disco para la descarga completa de los repositorios.
 
