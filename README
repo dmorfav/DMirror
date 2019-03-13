@@ -2,7 +2,7 @@
 DESCRIPCION DE ESTE SCRIPT
 --------------------------------
 Se pretende hacer uso de la herramienta "debmirror" para crear una replica local del repositorio 
-para la distribucion de Kali linux en su version kali-rolling.
+para la distribuciones de linux.
 
 
 ------------------------
@@ -35,12 +35,7 @@ systemctl restart apache2
 CREACION DE DIRECTORIOS 
 --------------------------------
 
-mkdir /var/www/html/kali -p
-
------------------------
-PERMISOS NECESARIOS
------------------------
-chown -R www-data:www-data /var/www/html/
+mkdir /CARPETA HOME USUARIO/mirror/DISTRO SELECCIONADO
 
 -----------------------------------------------
 CONTENIDO DE LOS ARCHIVOS A DESCARGAR Y SU USO
@@ -58,6 +53,9 @@ sitorios de manera automatizada
 El Archivo "Kali.Main.sh" apunta al dominio http.kali.org/kali ya que es el repositorio oficial de
 la distribucion para las arquitecturas i386 y amd64, y a su vez las ramas main, contrib y non-free.
 
+El Archivo "Debian.Main.sh" apunta al dominio http.debian.org ya que es el repositorio oficial de
+la distribucion para las arquitecturas i386 y amd64, y a su vez las ramas main, contrib y non-free.
+
 
 ----------------------------------------------------------
 EJEMPLO DE CRONTAB PARA AUTOMATIZAR EL PROCESO DE REPLICA
@@ -65,5 +63,5 @@ EJEMPLO DE CRONTAB PARA AUTOMATIZAR EL PROCESO DE REPLICA
 Con la instruccion "crontab -e" usted podra agregar las siguientes lineas para que la tarea de
 inicio y stop de la replica sean automatizadas.
 
-00 20 * * *     ~/mirror-debian-8/START.mirror.sh
-45 07 * * *     ~/mirror-debian-8/STOP.mirror.sh
+00 20 * * *     sh START.mirror.sh
+45 07 * * *     sh STOP.mirror.sh
