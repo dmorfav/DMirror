@@ -3,7 +3,7 @@ debmirror -debug \
 -progress \
 -verbose \
 -diff=none \
--host=repositorios.une.cu/debian \
+-host=deb.debian.org/debian \
 -root=/ \
 -method=http \
 -dist=stretch \
