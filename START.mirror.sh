@@ -16,10 +16,9 @@ read distro
 
 # Script responsable del repositorio 
 function makeDir(){
-
 #Directorio donde se almacenan los repositorios
 DIR="$HOME/mirror";
-
+#//TODO revisar porque da error esta condicion
 if [$# -eq 0];
    then 
 	mkdir $DIR >/dev/null 2>&1
