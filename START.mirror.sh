@@ -24,6 +24,8 @@ case $1 in
 	main='./distro/Kali.Main.sh'
 	makeDir	
 	makeDir Kali
+	gpg --no-default-keyring --keyring trustedkeys.gpg --import /usr/share/keyrings/debian-archive-keyring.gpg
+	gpg --list-keys --keyring trustedkeys.gpg
 	/bin/bash $main 2> $HOME/mirror/kali/error_mirror.log
 	;;
      "deb" ) 
