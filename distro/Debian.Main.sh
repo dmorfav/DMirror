@@ -1,15 +1,15 @@
 #!/bin/bash
  
-# sourcehost: choose a mirror in your proximity!
+# introduce la direccion de tu repositorio!
 HOST=ftp.debian.org;
  
-# destination directory
+# directorio de destino
 DEST=$HOME/mirror/debian
  
-# Debian version(s) to mirror
+# verion(es) Debian para replicar
 DIST=stretch
  
-# architecture
+# arquitectura
 ARCH=i386,amd64
  
 # log timestamp
