@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-echo "Actualizando repositorio Main"
+echo "Actualizando repositorio Backports"
  
 # introduce la direccion de tu repositorio!
 HOST=download.jovenclub.cu;
@@ -22,8 +22,8 @@ debmirror ${DEST} \
  --nosource \
  --host=${HOST} \
  --dist=${DIST} \
- --root=/repos/debian/stretch \
- --section=main,contrib,non-free \
+ --root=/repos/debian/stretch-backports \
+ --section=stretch-backports,main,contrib,non-free \
  --i18n \
  --arch=${ARCH} \
  

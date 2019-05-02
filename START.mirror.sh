@@ -29,10 +29,18 @@ case $1 in
 	;;
      "deb" ) 
 	main='./distro/Debian.Main.sh'
+	backports='./distro/Debian.Backports.sh'
+	multimedia='./distro/Debian.Multimedia.sh'
+	security='./distro/Debian.Security.sh'
+	updates='./distro/Debian.Updates.sh'
+
 	makeDir	
 	makeDir debian
 	gpg --no-default-keyring --keyring trustedkeys.gpg --import /usr/share/keyrings/debian-archive-keyring.gpg
-	gpg --list-keys --keyring trustedkeys.gpg
-	/bin/bash $main 2> $HOME/mirror/debian/error_mirror.log
+	/bin/bash $main 2> $HOME/mirror/debian/error_main_mirror.log
+	/bin/bash $backports 2> $HOME/mirror/debian/error_backports_mirror.log
+	/bin/bash $multimedia 2> $HOME/mirror/debian/error_multimedia_mirror.log
+	/bin/bash $security 2> $HOME/mirror/debian/error_security_mirror.log
+	/bin/bash $updates 2> $HOME/mirror/debian/error_updates_mirror.log
 	;;
 esac  
