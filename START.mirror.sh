@@ -20,12 +20,20 @@ DIR="$HOME/mirror";
 }
 
 case $1 in
-     "kal" )
-	main='./distro/Kali.Main.sh'
+     "ubu" )
+	main='./distro/Ubuntu.Main.sh'
+	backports='./distro/Ubuntu.Backports.sh'
+	proposed='./distro/Ubuntu.Proposed.sh'
+	security='./distro/Ubuntu.Security.sh'
+	updates='./distro/Ubuntu.Updates.sh'
 	makeDir	
-	makeDir Kali
+	makeDir ubuntu
 
-	/bin/bash $main 2> $HOME/mirror/kali/error_mirror.log
+	/bin/bash $main 2> $HOME/mirror/ubuntu/error_main_mirror.log
+	/bin/bash $backports 2> $HOME/mirror/ubuntu/error_backports_mirror.log
+	/bin/bash $proposed 2> $HOME/mirror/ubuntu/error_proposed_mirror.log
+	/bin/bash $security 2> $HOME/mirror/ubuntu/error_security_mirror.log
+	/bin/bash $updates 2> $HOME/mirror/ubuntu/error_updates_mirror.log
 	;;
      "deb" ) 
 	main='./distro/Debian.Main.sh'
