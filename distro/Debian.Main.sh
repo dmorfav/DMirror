@@ -1,7 +1,7 @@
 #!/bin/bash
  
 # sourcehost: choose a mirror in your proximity!
-HOST=ftp2.de.debian.org;
+HOST=ftp.debian.org;
  
 # destination directory
 DEST=$HOME/mirror/debian
