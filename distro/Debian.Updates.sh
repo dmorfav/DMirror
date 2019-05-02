@@ -4,7 +4,7 @@ clear
 echo "Actualizando repositorio Updates"
  
 # introduce la direccion de tu repositorio!
-HOST=download.jovenclub.cu;
+HOST=repositorios.une.cu;
  
 # directorio de destino
 DEST=$HOME/mirror/debian
@@ -22,7 +22,7 @@ debmirror ${DEST} \
  --nosource \
  --host=${HOST} \
  --dist=${DIST} \
- --root=/repos/debian/stretch-updates \
+ --root=/debian \
  --section=stretch-updates,main,contrib,non-free \
  --i18n \
  --arch=${ARCH} \

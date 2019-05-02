@@ -4,7 +4,7 @@ clear
 echo "Actualizando repositorio Main"
  
 # introduce la direccion de tu repositorio!
-HOST=download.jovenclub.cu;
+HOST=repositorios.une.cu;
  
 # directorio de destino
 DEST=$HOME/mirror/debian
@@ -22,7 +22,7 @@ debmirror ${DEST} \
  --nosource \
  --host=${HOST} \
  --dist=${DIST} \
- --root=/repos/debian/stretch \
+ --root=/debian \
  --section=main,contrib,non-free \
  --i18n \
  --arch=${ARCH} \
