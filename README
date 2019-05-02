@@ -63,5 +63,5 @@ EJEMPLO DE CRONTAB PARA AUTOMATIZAR EL PROCESO DE REPLICA
 Con la instruccion "crontab -e" usted podra agregar las siguientes lineas para que la tarea de
 inicio y stop de la replica sean automatizadas.
 
-00 20 * * *     sh START.mirror.sh
+00 20 * * *     sh START.mirror.sh deb
 45 07 * * *     sh STOP.mirror.sh
