@@ -1,8 +1,8 @@
 --------------------------------
 DESCRIPCION DE ESTE SCRIPT
 --------------------------------
-Se pretende hacer uso de la herramienta "debmirror" para crear una replica local del repositorio 
-para la distribuciones de linux.
+Se pretende hacer uso de la herramienta "debmirror" para crear una replica local de repositorios 
+para las distribuciones de linux.
 
 
 ------------------------
@@ -25,11 +25,9 @@ CONSIDERACIONES PREVIAS
 -----------------------------------
 INSTALACION DE PAQUETES NECESARIOS
 -----------------------------------
-apt-get update
-apt-get upgrade
-apt-get install apache2 apache2-doc apache2-utils debmirror
-systemctl restart apache2
 
+apt-get update && apt-get upgrade
+apt-get install apache2 apache2-doc apache2-utils debmirror
 
 --------------------------------
 CREACION DE DIRECTORIOS 
@@ -40,28 +38,23 @@ mkdir /CARPETA HOME USUARIO/mirror/DISTRO SELECCIONADO
 -----------------------------------------------
 CONTENIDO DE LOS ARCHIVOS A DESCARGAR Y SU USO
 -----------------------------------------------
-EL archivo "md5_checksums" como su nombre lo indica, es la relacion de los archivos subidos al
-repositorio, con sus respectivos hash originales.
+EL archivo "sha256_checksums.sh" como su nombre lo indica, es un script para verificar la relación de los archivos subidos al
+repositorio, con sus respectivos hash.
 
-El archivo "START.mirror.sh" es el script encargado de iniciar el scripts para realizar la 
-replica en su equipo local, es a su vez el archivo que necesitara añadir al
-crontab de su equipo, si desea automatizar la actualizacion del repositorio de manera automatica.
+El archivo "START.mirror.sh" es el encargado de iniciar el scripts para realizar la 
+replica en su equipo local, es a su vez el archivo que necesitará añadir al
+crontab de su equipo, si desea realizar la actualizacion del repositorio de manera automatica.
 
 El archivo "STOP.mirror.sh" sera el encargado de finalizar el proceso de descarga de los repo-
-sitorios de manera automatizada
+sitorios de manera automática
 
-El Archivo "Kali.Main.sh" apunta al dominio http.kali.org/kali ya que es el repositorio oficial de
-la distribucion para las arquitecturas i386 y amd64, y a su vez las ramas main, contrib y non-free.
-
-El Archivo "Debian.Main.sh" apunta al dominio http.debian.org ya que es el repositorio oficial de
-la distribucion para las arquitecturas i386 y amd64, y a su vez las ramas main, contrib y non-free.
-
+El directorio llamado distro contiene los script para actualizar los repositorios soportados hasta ahora en el proyecto.
 
 ----------------------------------------------------------
 EJEMPLO DE CRONTAB PARA AUTOMATIZAR EL PROCESO DE REPLICA
 ----------------------------------------------------------
 Con la instruccion "crontab -e" usted podra agregar las siguientes lineas para que la tarea de
-inicio y stop de la replica sean automatizadas.
+inicio y stop de la replica sean automatizadas. El inicio de la réplica comenzará a las 2000H y se detendrá a las 0745H 
 
 00 20 * * *     sh START.mirror.sh deb
 45 07 * * *     sh STOP.mirror.sh
