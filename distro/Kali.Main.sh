@@ -3,7 +3,7 @@ debmirror -debug \
 -progress \
 -verbose \
 -diff=none \
--host=http.kali.org/kali \
+-host=archive.kali.org/kali/ \
 -root=/ \
 -method=http \
 -dist=kali-rolling \
